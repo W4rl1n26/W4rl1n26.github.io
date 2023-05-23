@@ -1,31 +1,69 @@
 <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encripto</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <title>Encriptador</title>
+    <link rel="icon" type="icon/image" href="imgs/candado-cerrado-negro.svg">
 </head>
+
 <body>
-    <div class="contenedor">
-        <header>
-            <div class="contenedor-header">
-                <img src="Logo.png">
-                <h1>Encriptador alura</h1>
-                <div class="contenedor-theme">
-                    <div class="contenedor-check-principal">
-                        <label for="cambio-tema">
-                            <div class="checkbox-cambio-theme">
-                                <img src="noche-blanco.svg" alt="" id="img1" class="imgs-1">
-                                <img src="dia-blanco.svg" alt="" id="img2" class="imgs-2">
-                                <input type="checkbox" name="" id="cambio-tema" class="ocultar">
-                                <div class="circulo-activador-theme"></div> 
-                            </div>
-                        </label>
-                    </div>
+    <header class="contenedor-header-oscuro" id="contenedor-header">
+        <!-- <img src="imgs/Logo-azul.png" alt="logo alura"> -->
+        <div class="contenedor-h1-header-oscuro" id="contenedor-h1-header">
+            <h1 class="titulo">Encripto</h1>
+        </div>
+        <label for="activador-modos" class="label-checkbox-oscuro" id="label-checkbox">
+            <input type="checkbox" name="" id="activador-modos" class="checkbox">
+            <img src="imgs/modo-noche-blanco.svg" alt="icono-luna" class="img-modo icono-noche-blanco">
+            <div class="circulo-interior-label"></div>
+            <img src="imgs/modo-claro-blanco.svg" alt="icono-sol" class="img-modo icono-sol-blanco">
+        </label>
+    </header>
+    <main>
+        <div class="contenedor-main">
+            <div class="contenedor-textarea textarea-izquierda">
+                <textarea id="entrada" placeholder="Inserte texto a Encriptar"></textarea>
+                <div class="aviso opacity">
+                    <img src="imgs/notice.svg" alt="" class="img-aviso">
+                    <p class="p-aviso">Solo letras minúsculas y sin acentos</p>
+                </div>
+                <div class="contenedor-botones">
+                    <button id="encriptar">Encriptar <img src="imgs/candado-cerrado-blanco.svg" alt=""></button>
+                    <button id="desencriptar">Desencriptar <img src="imgs/candado-abierto-blanco.svg" alt=""></button>
                 </div>
             </div>
-        </header>
+            <div class="contenedor-textarea textarea-derecha">
+                <textarea name="" id="salida" readonly></textarea>
+                <div class="contenedor-img-derecha" id="contenedor-img-derecha-super">
+                    <h3 class="h3-super" id="texto-h3-super">Hola, Encripto-man te saluda!!</h3>
+                    <img src="imgs/super-dark.svg" alt="super-dark" class="img-super" id="img-super">
+                    <p class="p-super" id="texto-p-super">Ningún texto fue encontrado</p>
+                </div>
+                <button id="boton-copiar" class="ocultar"><img src="imgs/copia-blanco.svg" alt="icno-copiar"
+                        width="24px" height="24px">Copiar</button>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="contenedor-redes">
+            <a href="" class="img-redes-oscuro" id="redes-instagram"><img src="imgs/instagram.svg" alt="Logo instagram"></a>
+            <a href="" class="img-redes-oscuro" id="redes-github"><img src="imgs/github.svg" alt="Logo github"
+                class="logo-github" id="github"></a>
+            <a href="" class="img-redes-oscuro" id="redes-linkedin"><img src="imgs/linkedin.svg" alt="Logo linkedin"></a>
+        </div>
+        <div class="creditos">
+            <p>Creditos de recursos:</p>
+            <a class="icomoon" href="https://icomoon.io">Icomoon</a><a class="storyset" href="https://storyset.com">Storyset</a>
+            <p>2023 - 2024 &copy;</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -1,102 +1,373 @@
-:root{
-    --color-primario: #2e2e2e;
+/* ##################  Llamada a fuente externa  ################## */
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+/* ##################  Variables globales  ################## */
+
+:root {
+  --color-blanco-general: #ffffff;
+  --color-header-claro: #ffffff;
+  --color-footer-claro: #ffffff;
+  --color-textarea-claro: #dedede;
+  --color-negro-general: #000000;
+  --color-header-oscuro: #161b22;
+  --color-fondo-oscuro: #010409;
+  --color-tenue-oscuro: #32333b;
+  --color-terceareo-oscuro: #0d1117;
+  --color-cuarto-oscuro: #161b22;
+  --color-primario-boton: #238636;
+  --color-secundario-boton: #2ea043;
 }
 
-@import url('https://fonts.googleapis.com/css2?familia=Inter&display=swap');
+/* ##################  Estilos del header de la pagína  ################## */
 
-*{
-    margin: 0;
-    padding: 0;
+.contenedor-header-oscuro {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  height: 50px;
+  padding: 10px 5%;
+  background-color: var(--color-header-oscuro);
 }
 
-.contenedor{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    
+.contenedor-h1-header-oscuro > h1 {
+  padding: 5px;
+  margin: 0;
+  color: #fff;
 }
 
-.contenedor-header{
-    position: relative;
-    width: 100%;
-    height: 70px;
-    background: var(--color-primario);
+/* ##################  Estilos del checkbox de - 'Cambio de modo claro y oscuro'  ################## */
+
+.label-checkbox-oscuro {
+  width: 60px;
+  height: 30px;
+  border: 2px solid #b3b3b3;
+  border-radius: 50px;
+  margin: auto 0;
+  background: #383838;
+  transform: translateX(-50px);
 }
 
-.contenedor-header > img{
-    position: relative;
-    margin-top: 10px;
+.checkbox {
+  display: none;
 }
 
-.contenedor-header h1{
-    position: absolute;
-    color: #FFFFFF;
-    top: 16px;
-    left: 40%;
+.icono-noche-blanco {
+  position: absolute;
+  top: 3px;
+  left: 5px;
 }
 
-.contenedor-theme{
-    position: relative;
-    width: 150px;
-    height: 40px;
-    float: right;
-    top: 15px;
-    right: 150px;
+.icono-sol-blanco {
+  position: absolute;
+  left: 32px;
+  top: 3px;
 }
 
-.contenedor-check-principal{
-    display: inline-block;
-    position: relative;
-    top: 4px;
-    left: 30px;
+.circulo-interior-label {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  border-radius: 30px;
+  left: 5px;
+  top: 4px;
+  z-index: 5;
+  background-color: #fff;
+  transition: all 300ms;
 }
 
-.checkbox-cambio-theme{
-    position: relative;
-    width: 60px;
-    height: 30px;
-    background: #3b3b3b;
-    border-radius: 50px;
-    border: 2px solid #FFFFFF;
+#activador-modos:checked ~ .circulo-interior-label {
+  left: 33px;
+  transition: all 300ms;
 }
 
-.checkbox-cambio-theme .imgs-1,.imgs-2{
-    position: relative;
-    top: 3px;
-    left: 4px;
-    transition: all 250ms;
+/* ##################  Estilos del cuerpo de la pagína  ################## */
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-fondo-oscuro);
+  height: 100vh;
 }
 
-.circulo-activador-theme{
-    position: absolute;
-    background: #FFFFFF;
-    width: 20px;
-    height: 20px;
-    top: 5px;
-    left: 5px;
-    border-radius: 50%;
-    transition: all 300ms;
-
-}
-.ocultar{
-    display: none;
+.contenedor-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 80vh;
+  margin: 20px auto;
+  padding: 10px 30px;
+  box-sizing: border-box;
 }
 
-#cambio-tema:checked ~ .circulo-activador-theme{
-    left: 35px;
-    transition: all 300ms;
+/* ##################  Estilos de los dos textareas  ################## */
+
+.contenedor-main textarea {
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  font-size: 20px;
+  color: #fff;
+  padding: 10px;
+  background-color: var(--color-terceareo-oscuro);
 }
 
-#cambio-tema:checked + .imgs-1{
-    opacity: 1;
+.textarea-izquierda {
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  text-align: center;
+  margin: 0 10px;
+  height: 75vh;
+  box-sizing: border-box;
+  resize: none;
 }
 
-.contenedor-main{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    padding-top: 40px;
-    padding-left: 30px;
-    background: red;
+.textarea-izquierda textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 85%;
+  left: 0;
+  border: 1px solid transparent;
 }
 
+.textarea-derecha textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.textarea-derecha {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: 350px;
+  margin: 0 5px;
+  height: 80vh;
+  top: 0;
+  box-sizing: border-box;
+  resize: none;
+  user-select: none;
+}
+
+/* ##################  Estilos de los botones de toda la pagína  ################## */
+
+.textarea-izquierda button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 19px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  box-sizing: border-box;
+  transition: all 300ms;
+}
+
+.contenedor-botones {
+  display: flex;
+  justify-content: space-around;
+}
+
+.aviso {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 25px;
+  padding: 0;
+}
+
+.aviso p {
+  font-weight: bold;
+  font-size: 15px;
+  color: #fff;
+}
+
+.aviso img {
+  width: 20px;
+  height: 20px;
+}
+
+#encriptar {
+  background: #238636;
+}
+
+#desencriptar {
+  background: #238636;
+}
+
+#encriptar:hover {
+  background: #2ea043;
+  transition: all 300ms;
+}
+
+#desencriptar:hover {
+  color: #fff;
+  background: #2ea043;
+  transition: all 300ms;
+}
+
+#boton-copiar {
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  left: 30%;
+  color: #fff;
+  bottom: 10px;
+  background-color: #238636;
+  transition: all 300ms;
+}
+
+#boton-copiar:hover {
+  background: #2ea043;
+  color: #fff;
+  transition: all 300ms;
+}
+
+#boton-copiar img {
+  position: absolute;
+  left: 20px;
+  top: 8px;
+}
+
+/* ##################  Estilos del contenedor de imagen en textarea-derecha  ################## */
+
+.contenedor-img-derecha {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.img-super {
+  max-width: 100%;
+  height: 300px;
+}
+
+.contenedor-img-derecha h3 {
+  color: #fff;
+  padding: 0 22px;
+}
+
+.contenedor-img-derecha > p {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* ##################  Estilos de pie de pagína  ################## */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  padding: 30px;
+  text-align: center;
+  background: var(--color-header-oscuro);
+}
+
+footer .contenedor-redes a {
+  display: inline-block;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  padding: 30px;
+  margin: 0 5px 0 0;
+}
+
+.img-redes-oscuro:hover {
+  background: #1d222b;
+  border-radius: 60px;
+}
+
+/* ##################  Fin de estilos en modo oscuro  ################## */
+
+/* ####################################################################### */
+/* ##################  Inicio de estilos en modo claro  ################## */
+/* ####################################################################### */
+
+/* ##################  Estilos del header de la pagína modo claro  ################## */
+
+.contenedor-header-claro {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  height: 50px;
+  padding: 10px 5%;
+  background-color: var(--color-header-claro);
+}
+
+.contenedor-h1-header-claro h1 {
+  padding: 5px;
+  margin: 0;
+  color: var(--color-negro-general);
+}
+
+/* ##################  Estilos del checkbox de - 'Cambio de modo claro y oscuro'  ################## */
+
+.label-checkbox-claro {
+  width: 60px;
+  height: 30px;
+  border: 2px solid #b3b3b3;
+  border-radius: 50px;
+  margin: auto 0;
+  background: var(--color-textarea-claro);
+  transform: translateX(-50px);
+}
+
+.icono-noche-blanco {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+}
+
+.icono-sol-blanco {
+  position: absolute;
+  left: 32px;
+  top: 3px;
+}
+
+/* ##################  Estilos del cuerpo de la pagína  ################## */
+
+.img-redes-claro:hover {
+  background: var(--color-textarea-claro);
+  border-radius: 60px;
+}
+
+.ocultar {
+  display: none;
+}
+
+.opacity {
+  opacity: 0;
+}
+
+.creditos p{
+  color: gray;
+}
+
+.creditos a{
+  padding: 5px 10px;
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all 300ms;
+}
+.creditos a:hover{
+  font-weight: bold;
+  transition: all 300ms;
+}
