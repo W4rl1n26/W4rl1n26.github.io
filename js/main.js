@@ -207,6 +207,7 @@ function verificarTexto(texto) {// #### Verificar si existen caracteres especial
         imagenSuper.classList.add("ocultar");
         document.querySelector(".aviso").classList.add("opacity");
         document.querySelector("#boton-copiar").classList.remove("ocultar");
+        document.querySelector("#boton-copiar").classList.add("mostrar");
         encriptar(texto);
         textAreaEntrada.value = "";
         break;
@@ -216,6 +217,7 @@ function verificarTexto(texto) {// #### Verificar si existen caracteres especial
         imagenSuper.classList.add("ocultar");
         document.querySelector(".aviso").classList.add("opacity");
         document.querySelector("#boton-copiar").classList.remove("ocultar");
+        document.querySelector("#boton-copiar").classList.add("mostrar");
         desencriptar(texto);
         textAreaEntrada.value = "";
         break;
